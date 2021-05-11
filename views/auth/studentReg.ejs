@@ -1,0 +1,72 @@
+<%- include('../headerauth.ejs') %>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 mb-5 mt-5"  data-aos="fade">
+
+        <form action="#" class="p-5 bg-white">
+          <div class="row form-group">
+          <h2 class="mb-5 text-black">Registration for Students</h2>
+          </div>
+          
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black" for="name">Name</label> 
+              <input type="text" id="name" placeholder="Your Name" class="form-control">
+            </div>
+          </div>
+         
+          <div class="row form-group">
+            
+            <div class="col-md-12">
+              <label class="text-black" for="email">Email</label> 
+              <input type="email" id="email" placeholder="ex: nirzak@gmail.com" class="form-control">
+            </div>
+          </div>
+
+        <div class="row form-group">
+          <div class="col-md-12">
+            <label class="text-black" for="RegNo">Registration No</label> 
+            <input type="number" id="RegNo" placeholder="ex: 2016331101" class="form-control">
+          </div>
+        </div>
+
+      <div class="row form-group">
+        <div class="col-md-12">
+          <label class="text-black" for="Session">Session</label> 
+          <input type="text" id="Session" placeholder="ex: 2016-17" class="form-control">
+        </div>
+      </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black" for="password">Password</label> 
+              <input type="password" id="password" class="form-control">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+              <label class="text-black" for="password">Re-type Password</label> 
+              <input type="password" id="password" class="form-control">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-12">
+              <p class="text-black">Have an account? <a href="/login">Log In</a></p>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+              <input type="submit" value="Sign Up" class="btn btn-primary py-2 px-4 text-white">
+            </div>
+        </div>
+
+
+        </form>
+    </div>
+      
+    </div>
+  </div>
+  <%- include('../footer.ejs') %>
