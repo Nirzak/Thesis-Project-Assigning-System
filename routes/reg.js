@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* GET Student Sign Up Page */
-router.get('/student-signup', function(req, res, next) {
+router.get('/signup', function(req, res, next) {
   res.render('auth/studentReg', { pageTitle : 'Student Registration' });
 });
 
