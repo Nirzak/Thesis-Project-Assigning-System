@@ -2,6 +2,9 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const session = require('express-session');
+const flash = require('connect-flash');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
@@ -11,6 +14,9 @@ const loginRouter = require('./routes/login');
 const regRouter = require('./routes/reg');
 
 const app = express();
+
+// Passport Config
+require('./config/passport')(passport);
 
 // DB Config
 const db = require('./config/keys').mongoURI;
@@ -33,6 +39,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 // routes
 app.use('/', indexRouter);
