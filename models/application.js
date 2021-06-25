@@ -10,7 +10,7 @@ const appSchema = new mongoose.Schema({
     required: true
   },
   cgpa: {
-    type: number,
+    type: Number,
     required: true
   },
   description: {

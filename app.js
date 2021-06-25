@@ -4,14 +4,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const regRouter = require('./routes/reg');
+const adminRouter = require('./routes/admin');
 
 const app = express();
 
@@ -34,11 +37,13 @@ mongoose
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/admin', adminRouter);
+app.use(express.urlencoded({ extended: false }));
 
 // Express session
 app.use(
@@ -70,6 +75,8 @@ app.use('/users', usersRouter);
 app.use(loginRouter);
 app.use(regRouter);
 app.use(regRouter);
+
+app.use(bodyParser.json());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
