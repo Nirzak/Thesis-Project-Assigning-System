@@ -1,3 +1,17 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
-<a href="/logout" class="btn btn-secondary">Logout</a>
+<%- include('dbwrapper.ejs') %>
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row" id="main" >
+            <div class="col-sm-12 col-md-12 well" id="content">
+                <h1>Welcome <%= user.name %>!</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
+</div><!-- /#wrapper -->
+</body>
+</html>
