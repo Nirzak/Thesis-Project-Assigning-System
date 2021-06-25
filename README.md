@@ -1,16 +1,16 @@
 # Thesis-Project-Assigning-System
 SUST CSE Thesis/Project Assigning System is an online system to assign desired thesis/projects to student and also assign supervisors with student groups.
 
-# Getting Started with the Project
+## Getting Started with the Project
 
 The project is using NodeJS and ExpressJS at the backend.
 
 ### At first Clone this repo:
  
-`https://github.com/Nirzak/Thesis-Project-Assigning-System.git`
+`git clone https://github.com/Nirzak/Thesis-Project-Assigning-System.git`
 
 ### Now type the following to install all the dependecies:
- `cd Thesis-Project-Assigning-System`
+ `cd Thesis-Project-Assigning-System`<br />
  `npm install`
 
 
