@@ -14,4 +14,11 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
+// status
+router.get('/status', ensureAuthenticated, (req, res) =>
+  res.render('status', {
+    user: req.user
+  })
+);
+
 module.exports = router;
