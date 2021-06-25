@@ -28,4 +28,18 @@ router.get('/status', ensureAuthenticated, (req, res) =>
   })
 );
 
+// Supervisors Profile Page Route goes here
+router.get('/supervisors', ensureAuthenticated, (req, res) =>
+  res.render('supervisors', {
+    user: req.user
+  })
+);
+
+// Required Subjects Liss Page Route goes here
+router.get('/subjects', ensureAuthenticated, (req, res) =>
+  res.render('subjects', {
+    user: req.user
+  })
+);
+
 module.exports = router;
