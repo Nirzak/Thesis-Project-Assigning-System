@@ -1,3 +1,4 @@
+/* Defining necessary libraries */
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -10,15 +11,18 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 
+// All router definition goes here.
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const regRouter = require('./routes/reg');
 const adminRouter = require('./routes/admin');
+const applicationRouter = require('./routes/application');
 
 const app = express();
 
-// Passport Config
+// Passport Config. Has been used for login purpose
 require('./config/passport')(passport);
 
 // DB Config
@@ -42,7 +46,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/admin', adminRouter);
+app.use('/admin', adminRouter); // Put it in above urlencoded or admin-bro will show error.
 app.use(express.urlencoded({ extended: false }));
 
 // Express session
@@ -69,12 +73,13 @@ app.use(function(req, res, next) {
   next();
 });
 
-// routes
+// Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(loginRouter);
 app.use(regRouter);
 app.use(regRouter);
+app.use(applicationRouter);
 
 app.use(bodyParser.json());
 

@@ -9,11 +9,7 @@ router.get('/signup', forwardAuthenticated, function(req, res, next) {
   res.render('auth/studentReg', { pageTitle : 'Registration' });
 });
 
-router.get('/supervisor-signup', function(req, res, next) {
-    res.render('auth/supervisorReg', { pageTitle : 'Supervisor Registration' });
-  });
-
-// Register Method
+// Register Post Method
 router.post('/signup', (req, res) => {
   const { name, email, reg, session, password, password2 } = req.body;
   let errors = [];

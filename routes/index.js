@@ -14,13 +14,6 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
-// Application Page Route
-router.get('/application', ensureAuthenticated, (req, res) =>
-  res.render('application', {
-    user: req.user
-  })
-);
-
 // Application Status Page Route
 router.get('/status', ensureAuthenticated, (req, res) =>
   res.render('status', {

@@ -9,10 +9,6 @@ const appSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  cgpa: {
-    type: Number,
-    required: true
-  },
   description: {
     type: String,
     required: true
@@ -21,8 +17,16 @@ const appSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  cgpa: {
+    type: Number,
+    required: true
+  },
+  status:{
+    type: String,
+    required: false
+  },
   userid: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: 'Student'
   }
 });

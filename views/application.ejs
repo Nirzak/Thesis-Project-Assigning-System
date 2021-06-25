@@ -1,10 +1,11 @@
 <%- include('dbwrapper.ejs') %>
+<%- include('partials/messages.ejs') %>
 <div id="page-wrapper">
   <div class="container-fluid">
       <!-- Page Heading -->
       <div class="row" id="main" >
           <div class="col-sm-12 col-md-12 well" id="content">
-            <form action="/signup" method="POST" class="p-5 bg-white">
+            <form action="/application" method="POST" class="p-5 bg-white">
               <div class="row form-group">
               <h2 class="mb-5 text-black">Thesis-Project Proposal Form</h2>
               </div>
@@ -30,16 +31,16 @@
               <div class="col-md-10">
                 <label class="text-black" for="description">Description</label> 
                 <textarea type="text" id="description" name="description" placeholder="Describe Your Project/Thesis Proposal Here" rows="8" cols="10" class="form-control"
-                value="<%= typeof reg != 'undefined' ? reg : '' %>"></textarea>
+                value="<%= typeof description != 'undefined' ? description : '' %>"></textarea>
               </div>
             </div>
     
           <div class="row form-group">
             <div class="col-md-10">
-              <label class="text-black" for="Session">Supervisor Choice List</label> 
+              <label class="text-black" for="choice">Supervisor Choice List</label> 
               <textarea type="text" id="choice" name="choice"
               placeholder="Provide your Supervisor Choice List in List format. For an Example 1. First Supervisor, 2. 2nd Supervisor" rows="7" cols="10" class="form-control"
-              value="<%= typeof session != 'undefined' ? session : '' %>"></textarea>
+              value="<%= typeof choice != 'undefined' ? choice : '' %>"></textarea>
             </div>
           </div>
     
