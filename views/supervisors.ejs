@@ -4,7 +4,25 @@
         <!-- Page Heading -->
         <div class="row" id="main" >
             <div class="col-sm-12 col-md-12 well" id="content">
-                <h1>Profile of Supervisors</h1>
+                <h2>Profile of Supervisors</h2>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Profile</th>
+                        <th scope="col">Research Interests</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <%supervisorsList.forEach(supervisor => {%>
+                        <tr><td><h3><%= supervisor.name %></h3></td>
+                        <td rowspan="4"><h4><%= supervisor.researchInterest %></h4></td>
+                        </tr>
+                            <tr><td><h5><%= supervisor.designation %></h5></td></tr>
+                            <tr><td><h5><%= supervisor.email %></h5></td></tr>
+                            <tr><td><h5><%= supervisor.phone %></h5></td></tr>
+                    <%})%>
+                    </tbody>
+                  </table>
             </div>
         </div>
         <!-- /.row -->

@@ -20,6 +20,7 @@ const regRouter = require('./routes/reg');
 const adminRouter = require('./routes/admin');
 const applicationRouter = require('./routes/application');
 const statusRouter = require('./routes/status');
+const supervisorsRouter = require('./routes/supervisors');
 
 const app = express();
 
@@ -82,6 +83,7 @@ app.use(regRouter);
 app.use(regRouter);
 app.use(applicationRouter);
 app.use(statusRouter);
+app.use(supervisorsRouter);
 
 app.use(bodyParser.json());
 
