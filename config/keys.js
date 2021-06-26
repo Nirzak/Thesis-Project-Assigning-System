@@ -1,4 +1,4 @@
-dbPassword = 'mongodb+srv://nirzak:328046@cluster0.6vwif.mongodb.net/myFirstDatabase?retryWrites=true';
+dbPassword = 'Input your mongodb URI here';
 
 module.exports = {
     mongoURI: dbPassword
