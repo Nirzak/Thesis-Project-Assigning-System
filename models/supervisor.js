@@ -14,7 +14,7 @@ const Supervisor = model('Supervisor',{
     required: true
   },
   phone: {
-    type: Number,
+    type: String,
     required: true
   },
   researchInterest: {
