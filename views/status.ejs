@@ -4,7 +4,24 @@
         <!-- Page Heading -->
         <div class="row" id="main" >
             <div class="col-sm-12 col-md-12 well" id="content">
-                <h1>Application Status</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Supervisor Choice</th>
+                        <th scope="col">Assigned Supervisor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <%applicationsList.forEach(application => {%>
+                        <tr>
+                            <th scope="row"><%= application.title %></th>
+                            <td><%= application.choice %></td>
+                            <td><%= application.status %></td>
+                        </tr>
+                    <%})%>
+                    </tbody>
+                  </table>
             </div>
         </div>
         <!-- /.row -->

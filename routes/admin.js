@@ -3,11 +3,14 @@ const AdminBroExpress = require('admin-bro-expressjs')
 const AdminBroMongoose = require('admin-bro-mongoose')
 
 const mongoose = require('mongoose')
+const Student = require('../models/student')
+const Application = require('../models/application')
+const Supervisor = require('../models/supervisor')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 
 const adminBro = new AdminBro({
-  databases: [mongoose],
+  resources: [Student, Application, Supervisor],
   rootPath: '/admin',
   branding: {
     companyName: 'Thepro-Assigner',

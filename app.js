@@ -19,6 +19,7 @@ const loginRouter = require('./routes/login');
 const regRouter = require('./routes/reg');
 const adminRouter = require('./routes/admin');
 const applicationRouter = require('./routes/application');
+const statusRouter = require('./routes/status');
 
 const app = express();
 
@@ -80,6 +81,7 @@ app.use(loginRouter);
 app.use(regRouter);
 app.use(regRouter);
 app.use(applicationRouter);
+app.use(statusRouter);
 
 app.use(bodyParser.json());
 
